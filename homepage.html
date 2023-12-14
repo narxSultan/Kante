@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    display: flex;
+}
+.sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background: rgba(29, 3, 143, 0.345);
+}
+.logo{
+    height: 80px;
+    padding: 16px;
+}
+.menu{
+    height: 88px;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+.menu li{
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+    transform: all 0.5s ease-in-out;
+}
+.menu li:hover,:active {
+    background: #e0e0e058;
+}
+.menu a{
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.menu a span{
+    overflow: hidden;
+}
+.menu a i{
+    font-size: 1.2rem;
+}
+
+.mimi2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+
+}
+/* *****main--content****** */
+.main--content{
+ position: relative;
+ background: rgb(241, 210, 215);
+ width: 100%;
+ padding: 1rem;
+}
+.header1{
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+background: rgb(64, 90, 100);
+padding: 8px 2rem;
+border-radius: 5px;
+margin-bottom: 1rem;
+}
+.header1 img{
+ width: 50px;
+ height: 50px;
+ cursor: pointer;
+ border-radius: 50px;  
+}
+h2{
+    color: #ea23bc;
+}
+.user--info{
+display: flex;
+align-items: center;
+gap: 1;
+}
+.search--box{
+background: rgb(237, 237, 237);
+border-radius: 50px;
+color: rgba(113, 99, 186, 255);
+display: flex;
+align-items: center;
+gap: 5px;
+padding: 4px 12px;
+}
+.search--box input{
+background: transparent;
+padding: 10px;    
+}
+.search--box i{
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+.search--box i:hover{
+transform: scale(1.2);
+}
+/* *******card container******* */
+.card--container{
+background: #fff;
+padding: 2rem;
+border-radius: 10px;
+}
+.main--title{
+color: rgba(113, 99, 186, 255);
+padding-bottom: 10px;
+font-size: 15px;
+}
+.card--wrapper{
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+}
+.payment--card{
+background: rgb(229, 223, 223);
+border-radius: 10px;
+padding: 1.2rem;
+width: 290px;
+height: 150px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+transition: all 0.5s ease-in-out;
+}
+.payment--card:hover{
+    transform: translateY(-5px);
+}
+.card--header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+
+}
+.amount{
+    display: flex;
+    flex-direction: column;
+}
+.amount--value{
+font-size: 24px;
+font-family: 'Courier New', Courier,monospace;
+}
+.card-detail{
+font-size: 18px;
+color: #777777;
+letter-spacing: 2px;
+font-family: 'Courier New', Courier, monospace;
+}
+/* ******CSS COLOR***** */
+.light-green{
+    background: rgb(156, 214, 198);
+}
+.light-purple{
+    background: rgb(214, 166, 212);
+}
+.light-red{
+    background: rgb(230, 143, 158);
+}
+/* ***tabuler*** */
+.tabuler{
+    background:#fff ;
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 2rem;
+}
+.table--container{
+    width: 100px;
+}
+table{
+    width: 100px;
+    border-collapse: collapse;
+}
+thead{
+    background-color: rgba(113, 99, 186, 255);
+    color: white;
+}
+th{
+    padding: 15px;
+    text-align: left;
+}
+tbody{
+    background: #f2f2f2;
+}
+td{
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+}
+tr:nth-child(even){
+background: #fff;
+}
+tfoot{
+    background: rgba(113, 99, 186, 255);
+    font-weight: bold;
+    color: #fff;
+}
+tfoot{
+    padding: 15px;
+    color: #fff;
+}
+.table--container button{
+    color: green;
+    background: none;
+    cursor: pointer;
+}
+    </style>
+  </head>
+<body>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li>
+            <a href="" class="active">
+                <i class="mimi1"></i>
+                <span>Dashboard</span>
+            </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="mimi1"></i>
+                    <span>Home</span>
+                </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="mimi1"></i>
+                        <span>Order</span>
+                    </a>
+                    </li>
+                     <li>
+                        <a href="">
+                            <i class="mimi1"></i>
+                            <span>FAQ</span>
+                        </a>
+                        </li>
+                        <li class="mimi2">
+                            <a href="">
+                                <i class="mimi1"></i>
+                                <span>logout</span>
+                            </a>
+                            </li>
+        </ul>
+    </div>  
+    <div class="main--content">
+        <div class="header1">
+            <span><h2>Dashboard</h2>primary</span>
+            
+         <div class="user--info">
+        <div class="search--box">
+            <i class="fasolid fa-search"></i>
+            <input type="text" placeholder="search"/>
+        </div>     
+        </div>  
+         <img src="/img/image.JPG" alt="">
+    </div> 
+   
+    <div class="card--container">
+        <h3 class="main--title">Today data</h3>
+        <div class="card--wrapper">
+            <div class="payment--card">
+                <div class="card--header">
+                    <div class="amount">
+                        <span class="title">Payment Amount</span>
+                        <span class="amount--value">Tsh 100,000/=</span>
+                    </div>
+                    <i class="fas.fa-dollar-sign.icon"></i>
+                </div>
+                <span class="card-detail">***** ***** ***** 2345</span>
+            </div>
+            <div class="payment--card light-green">
+                <div class="card--header">
+                    <div class="amount">
+                        <span class="title">Payment Customer</span>
+                        <span class="amount--value">Tsh 88,000/=</span>
+                    </div>
+                    <i class="fas.fa-dollar-sign.icon"></i>
+                </div>
+                <span class="card-detail">***** ***** ***** 9545</span>
+            </div>
+            <div class="payment--card light-purple">
+                <div class="card--header">
+                    <div class="amount">
+                        <span class="title">Payment Order</span>
+                        <span class="amount--value">Tsh 25,340/=</span>
+                    </div>
+                    <i class="fas.fa-dollar-sign.icon"></i>
+                </div>
+                <span class="card-detail">***** ***** ***** 4567</span>
+            </div>
+            <div class="payment--card light-red">
+                <div class="card--header">
+                    <div class="amount">
+                        <span class="title">Payment Process</span>
+                        <span class="amount--value">Tsh 12,500/=</span>
+                    </div>
+                    <i class="fas.fa-dollar-sign.icon"></i>
+                </div>
+                <span class="card-detail">***** ***** ***** 6789</span>
+            </div>
+        </div>
+    </div>
+    <div class="tabuler">
+        <h4 class="main title">finance data</h4>
+        <div class="table--container">            
+                <table>
+                    <thead>
+                    <tr>
+                        <th>date</th>
+                        <th>Transaction type</th>
+                        <th>Descrition</th>
+                        <th>Amount</th>
+                        <th>categories</th>
+                        <th>status</th>
+                        <th>action</th>  
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                2023-05-03</td>
+                            <td>expenses</td>
+                             <td>office 
+                                supplies</td>
+                             <td>Tsh300</td>
+                             <td>office
+                             expenses</td>
+                             <td>pending</td>
+                             <td><button>Edit</button></td>  
+                        </tr>
+                        <tr>
+                            <td>
+                                2023-05-02</td>
+                            <td>expenses</td>
+                             <td>office 
+                                supplies</td>
+                             <td>Tsh300</td>
+                             <td>office
+                             expenses</td>
+                             <td>pending</td>
+                             <td><button>Edit</button></td>  
+                        </tr>
+                        <tr>
+                            <td>
+                                2023-05-01</td>
+                            <td>expenses</td>
+                             <td>office 
+                                supplies</td>
+                             <td>Tsh300</td>
+                             <td>office
+                             expenses</td>
+                             <td>pending</td>
+                             <td><button>Edit</button></td>  
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td colspan="7">Total: Tsh 20,000/=</td>
+                      </tr>
+                    </tfoot>
+                </table>      
+        </div>
+    </div> 
+</div>
+</body>
+</html>
